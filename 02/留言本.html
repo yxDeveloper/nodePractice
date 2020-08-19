@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://192.168.150.76:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>留言本</title>
+  <!-- 
+    浏览器收到 HTML 响应内容之后，就要开始从上到下依次解析，
+    当在解析的过程中，如果发现：
+      link
+      script
+      img
+      iframe
+      video
+      audio
+    等带有 src 或者 href（link） 属性标签（具有外链的资源）的时候，浏览器会自动对这些资源发起新的请求。
+   -->
+   <!-- 
+      注意：在服务端中，文件中的路径就不要去写相对路径了。
+      因为这个时候所有的资源都是通过 url 标识来获取的
+      我的服务器开放了 /public/ 目录
+      所以这里的请求路径都写成：/public/xxx
+      / 在这里就是 url 根路径的意思。
+      浏览器在真正发请求的时候会最终把 http://127.0.0.1:3000 拼上
+
+      不要再想文件路径了，把所有的路径都想象成 url 地址
+    -->
+  <link rel="stylesheet" href="./留言本_files/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="chrome-extension://fidicgekecdkdmkjghdgadgdmcfodfid/themes/default/content.css"></head>
+
+<body>
+  <div class="header container">
+    <div class="page-header">
+      <h1>Example page header <small>Subtext for header</small></h1>
+      <a class="btn btn-success" href="http://192.168.150.76:3000/post">发表留言</a>
+    </div>
+  </div>
+  <div class="comments container">
+    <ul class="list-group">
+      
+      <li class="list-group-item">不错说：对南沙健康拿到数据看定金款三 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">范家伟说：香锅还是香锅啊 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">王汪汪说：能看出来是谁发的吗 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">马化腾说：不充钱怎么变得更强 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">崔铭说：催什么催，快下课 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">王一丹说：社会我丹姐 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">王一丹说说：本仙女最美 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">技术说：老师像个大男孩 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">气死规定说：同桌睡一下午 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">嗨嗨说：嗨嘿嘿。。哈哈 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">小明说：熟练度不规范里sure <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">打不开说：打不开评论 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">下课说：晚上吃鸡BA
+
+ <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">huahua说：heiheihei <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">KK说：恭喜WE~ <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">你好 说：坚实的覅基金卡死了看懂  <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">aaaaaaa说：有钱真的可以，猥琐以为 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">**_**说：**_** 天气好的想哭   **_** <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">嘿嘿嘿说：老师你好帅好帅  <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">你李哥说：你李哥还是你李哥 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">huahua说：xixiixix <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">不告诉你说：何时下课？？？ <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">嘿嘿说：吼吼！！！是阿发发发发 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">wqq说：wwwwwwwwwwwwww <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">会计法萨拉丁说：发达发生的方法 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">11111说：11111111 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">李旭辉说：我不睡觉了
+我不吃鸡了
+我要好好学习 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">嘿嘿嘿说：嘿嘿哈哈吼 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">哎呦我去说：嘻嘻嘻嘻嘻 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">zaa说：哈哈哈嘻嘻 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">hahahah ni说：naihfdbvhgs gvsdjnd <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">邓起伟说：啦啦啦啦啦 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">黄大仙说：哈哈哈哈哈哈 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">www说：哈哈cscscs <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">fhaod ;说：jflk;sdaj 
+ <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">邓启伟说：我真傻哈哈哈 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">11说：写啥好嫩嗯嗯嗯呃· <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">人生啊说：哈哈哈哈哈哈哈 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">项毅说：我只是一只小猫咪 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">哇哇哇说：流弊流弊流弊 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">CM雪说：鸡鹅嘎和手机高仿 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">llllll说：哈哈哈哈哈哈 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">lingin说：qqqqqq <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">关子健说：我是真的傻 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">hahaha说：hahahaha <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">11说：为所欲为 接 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">啦啦说：乌拉拉拉拉拉 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">王汪汪说：您好呀~呵呵嘿嘿 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">得意的饿说：的萨芬撒是否 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">梵蒂冈说：放大格式是父 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">dfvdvf说：dfsfvgbb <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">孟尝君说：哈哈哈哈啊哈哈HHAHAHAHAA <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">hahah 说：elenine <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">huahua说：hahahha <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">王大锤说：123456 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">额图集电梯说：人具体的有就一个都感觉 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">ccc说：123123 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">abc说：haha <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">sadsadsada说：sdadadsasadadsad <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">dnsanda说：dsajdsajdnsa <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">啦啦说：哈哈哈哈哈 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">zhj说：1234456788 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">干活吧说：劶i谁知道发生的方式阿道夫 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">dsfas说：fgasdgdfghdfhgjhghkj <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">王大爷说：张大爷  你真傻 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">复活节阿富汗籍说：发挥开发空军飞机阿克苏分 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">sfesgfag说：GERAWGSDSBER <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">sdasdas说：sadasdasd <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">羊羊羊说：缺货缺货缺货缺货 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">123说：456778899 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">youhun说：123131321231 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">9999999999说：99999999999999999999 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">lalal说：啦啦啦啦啦 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">nihadfdsgf说：sfadsfaf <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">aa说：xxxxxx <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">bfiwufgw说：asdfd <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">123213说：123123123 <span class="pull-right">2017-11-2 17:11:22</span></li>
+      
+      <li class="list-group-item">张三说：今天天气不错！ <span class="pull-right">2015-10-16</span></li>
+      
+      <li class="list-group-item">张三2说：今天天气不错！ <span class="pull-right">2015-10-16</span></li>
+      
+      <li class="list-group-item">张三3说：今天天气不错！ <span class="pull-right">2015-10-16</span></li>
+      
+      <li class="list-group-item">张三4说：今天天气不错！ <span class="pull-right">2015-10-16</span></li>
+      
+      <li class="list-group-item">张三5说：今天天气不错！ <span class="pull-right">2015-10-16</span></li>
+      
+    </ul>
+  </div>
+
+
+
+</body></html>
