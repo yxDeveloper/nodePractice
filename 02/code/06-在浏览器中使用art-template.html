@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>06-在浏览器中使用art-template</title>
+</head>
+<body>
+  <!-- 
+    注意：在浏览器中需要引用 lib/template-web.js 文件
+
+    强调：模板引擎不关心你的字符串内容，只关心自己能认识的模板标记语法，例如 {{}}
+    {{}} 语法被称之为 mustache 语法，八字胡啊。
+   -->
+  <script src="node_modules/art-template/lib/template-web.js"></script>
+  <script type="text/template" id="tpl">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Document</title>
+    </head>
+    <body>
+      <p>大家好，我叫：{{ name }}</p>
+      <p>我今年 {{ age }} 岁了</p>
+      <h1>我来自 {{ province }}</h1>
+      <p>我喜欢：{{each hobbies}} {{ $value }} {{/each}}</p>
+    </body>
+    </html>
+  </script>
+  <script>
+    var ret = template('tpl', {
+      name: 'Jack',
+      age: 18,
+      province: '北京市',
+      hobbies: [
+        '写代码',
+        '唱歌',
+        '打游戏'
+      ]
+    })
+
+    console.log(ret)
+  </script>
+</body>
+</html>
