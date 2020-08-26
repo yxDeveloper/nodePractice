@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script>
+    // IE 8 不支持
+    // ;['abc', 'd', 'efg'].forEach(function (item, index) {
+    //   console.log(item)
+    // })
+
+
+
+    // 遍历 jQuery 元素
+    // $.each(['abc', 'd', 'efg'], function (index, item) {
+    //   console.log(item)
+    // })
+
+    console.log($('div'))
+
+    // 伪数组是对象
+    // 对象的原型链中没有 forEach
+    // 对象的原型链是 Object.prototype
+
+    // 这个 each 是 jQuery 提供的
+    // 这个 each 在 jQuery 的原型链中
+    // $('div').each(function (index, item) {
+    //   console.log(item)
+    // })
+
+    // jQuery 不是专门用来遍历 jQuery 元素的
+    // 1. 方便的遍历 jQuery 元素
+    // 2. 可以在不兼容 forEach 的低版本浏览器中使用 jQuery 的 each 方法
+
+    // ;[].slice.call($('div')).forEach(function (item) {console.log(item)})
+
+  </script>
+</body>
+</html>
