@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>留言本</title>
+  <!-- 
+    浏览器收到 HTML 响应内容之后，就要开始从上到下依次解析，
+    当在解析的过程中，如果发现：
+      link
+      script
+      img
+      iframe
+      video
+      audio
+    等带有 src 或者 href（link） 属性标签（具有外链的资源）的时候，浏览器会自动对这些资源发起新的请求。
+   -->
+   <!-- 
+      注意：在服务端中，文件中的路径就不要去写相对路径了。
+      因为这个时候所有的资源都是通过 url 标识来获取的
+      我的服务器开放了 /public/ 目录
+      所以这里的请求路径都写成：/public/xxx
+      / 在这里就是 url 根路径的意思。
+      浏览器在真正发请求的时候会最终把 http://127.0.0.1:3000 拼上
+
+      不要再想文件路径了，把所有的路径都想象成 url 地址
+    -->
+  <link rel="stylesheet" href="/public/lib/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+  <div class="header container">
+    <div class="page-header">
+      <h1>Example page header <small>Subtext for header</small></h1>
+      <a class="btn btn-success" href="/post">发表留言</a>
+    </div>
+  </div>
+  <div class="comments container">
+    <ul class="list-group">
+      {{each comments}}
+      <li class="list-group-item">{{ $value.name }}说：{{ $value.message }} <span class="pull-right">{{ $value.dateTime }}</span></li>
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+</html>
