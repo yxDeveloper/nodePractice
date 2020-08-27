@@ -1,0 +1,15 @@
+{
+  "name": "npm-demo",
+  "version": "0.0.1",
+  "description": "这是一个测试项目",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lipengzhou",
+  "license": "ISC",
+  "dependencies": {
+    "art-template": "^4.12.2",
+    "jquery": "^3.2.1"
+  }
+}
