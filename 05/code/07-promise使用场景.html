@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="00-js中的一等公民函数.js" id="user_form">
+  </form>
+  <script type="text/template" id="tpl">
+    <div>
+      <label for="">用户名</label>
+      <input type="text" value="{{ user.username }}">
+    </div>
+    <div>
+      <label for="">年龄</label>
+      <input type="text" value="{{ user.age }}">
+    </div>
+    <div>
+      <label for="">职业</label>
+      <select name="" id="">
+        {{ each jobs }} {{ if user.job === $value.id }}
+        <option value="{{ $value.id }}" selected>{{ $value.name }}</option>
+        {{ else }}
+        <option value="{{ $value.id }}">{{ $value.name }}</option>
+        {{ /if }} {{ /each }}
+      </select>
+    </div>
+  </script>
+  <script src="node_modules/art-template/lib/template-web.js"></script>
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script>
+    // 用户表
+    //  其中一个接口获取用户数据
+    //  职业：2
+    // 职业信息表
+    //  其中一个接口获取所有的职业信息
+    // get('http://127.0.0.1:3000/users/4', function (userData) {
+    //   get('http://127.0.0.1:3000/jobs', function (jobsData) {
+    //     var htmlStr = template('tpl', {
+    //       user: JSON.parse(userData),
+    //       jobs: JSON.parse(jobsData)
+    //     })
+    //     console.log(htmlStr)
+    //     document.querySelector('#user_form').innerHTML = htmlStr
+    //   })
+    // })
+
+    // var data = {}
+    // $.get('http://127.0.0.1:3000/users/4')
+    //   .then(function (user) {
+    //     data.user = user
+    //     return $.get('http://127.0.0.1:3000/jobs')
+    //   })
+    //   .then(function (jobs) {
+    //     data.jobs = jobs
+    //     var htmlStr = template('tpl', data)
+    //     document.querySelector('#user_form').innerHTML = htmlStr
+    //   })
+
+    // var data = {}
+    // pGet('http://127.0.0.1:3000/users/4')
+    //   .then(function (user) {
+    //     data.user = user
+    //     return pGet('http://127.0.0.1:3000/jobs')
+    //   })
+    //   .then(function (jobs) {
+    //     data.jobs = jobs
+    //     var htmlStr = template('tpl', data)
+    //     document.querySelector('#user_form').innerHTML = htmlStr
+    //   })
+
+    // pGet('http://127.0.0.1:3000/users/4', function (data) {
+    //   console.log(data)
+    // })
+
+    pGet('http://127.0.0.1:3000/users/4')
+      .then(function (data) {
+        console.log(data)
+      })
+
+    function pGet(url, callback) {
+      return new Promise(function (resolve, reject) {
+        var oReq = new XMLHttpRequest()
+        // 当请求加载成功之后要调用指定的函数
+        oReq.onload = function () {
+          // 我现在需要得到这里的 oReq.responseText
+          callback && callback(JSON.parse(oReq.responseText))
+          resolve(JSON.parse(oReq.responseText))
+        }
+        oReq.onerror = function (err) {
+          reject(err)
+        }
+        oReq.open("get", url, true)
+        oReq.send()
+      })
+    }
+
+
+    // 这个 get 是 callback 方式的 API
+    // 可以使用 Promise 来解决这个问题
+    function get(url, callback) {
+      var oReq = new XMLHttpRequest()
+      // 当请求加载成功之后要调用指定的函数
+      oReq.onload = function () {
+        // 我现在需要得到这里的 oReq.responseText
+        callback(oReq.responseText)
+      }
+      oReq.open("get", url, true)
+      oReq.send()
+    }
+  </script>
+</body>
+
+</html>
