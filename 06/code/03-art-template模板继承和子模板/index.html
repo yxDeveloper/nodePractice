@@ -1,0 +1,21 @@
+{{extend './layout.html'}}
+
+{{ block 'head' }}
+<style>
+  body {
+    background-color: skyblue;
+  }
+</style>
+{{ /block }}
+
+{{ block 'content' }}
+<div>
+  <h1>index 页面填坑内容</h1>
+</div>
+{{ /block }}
+
+{{ block 'script' }}
+<script>
+  window.alert('index 页面自己的 js 脚本')
+</script>
+{{ /block }}
