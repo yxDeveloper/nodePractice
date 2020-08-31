@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+  {{ block 'head' }}{{ /block }}
+</head>
+<body>
+  {{ include './header.html' }}
+  <!-- 留一个坑，将要留给孩子去填坑 -->
+  
+  {{ block 'content' }}
+    <h1>默认内容</h1>
+  {{ /block }}
+
+  {{ include './footer.html' }}
+  <script src="/node_modules/jquery/dist/jquery.js"></script>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  {{ block 'script' }}{{ /block }}
+</body>
+</html>
