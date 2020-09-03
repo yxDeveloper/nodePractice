@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/public/css/login.css">
+</head>
+
+<body>
+  <div class="main">
+    <div class="header">
+      <a href="/">
+        <img src="/public/img/logo3.png" alt="">
+      </a>
+      <h1>用户注册</h1>
+    </div>
+    <!-- 
+      表单具有默认的提交行为，默认是同步的，同步表单提交，浏览器会锁死（转圈儿）等待服务端的响应结果。
+      表单的同步提交之后，无论服务端响应的是什么，都会直接把响应的结果覆盖掉当前页面。
+
+      后来有人想到了一种办法，来解决这个问题。
+     -->
+    <form id="register_form" method="post" action="/register">
+      <div class="form-group">
+        <label for="email">邮箱</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Email" autofocus>
+      </div>
+      <div class="form-group">
+        <label for="nickname">昵称</label>
+        <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Nickname">
+      </div>
+      <div class="form-group">
+        <label for="password">密码</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-success btn-block">注册</button>
+    </form>
+    <div class="message">
+      <p>已有账号? <a href="/login">点击登录</a>.</p>
+    </div>
+  </div>
+  <script src="/node_modules/jquery/dist/jquery.js"></script>
+  <script>
+    $('#register_form').on('submit', function (e) {
+      e.preventDefault()
+      var formData = $(this).serialize()
+      $.ajax({
+        url: '/register',
+        type: 'post',
+        data: formData,
+        dataType: 'json',
+        success: function (data) {
+          var err_code = data.err_code
+          if (err_code === 0) {
+            // window.alert('注册成功！')
+            // 服务端重定向针对异步请求无效
+            window.location.href = '/'
+          } else if (err_code === 1) {
+            window.alert('邮箱已存在！')
+          } else if (err_code === 2) {
+            window.alert('昵称已存在！')
+          } else if (err_code === 500) {
+            window.alert('服务器忙，请稍后重试！')
+          }
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>
+
+<!-- 
+  领过苹果的不能再领了
+  老师发苹果
+  HTTP 是无状态的
+
+  你自己记住你自己
+
+  Cookie 小纸条
+
+  Cookie 可以用来保存一些不太敏感的数据。
+  但是不能用来保存用户登陆状态。
+  isVIP: true
+
+  记住用户名、购物车
+
+  Session
+
+  超市 -》 电子柜（）服务端
+  你（客户端）（二维码小票（开箱凭证）Cookie）（凭证是唯一的，不可能重复）
+  一旦丢失，不可找回，如果小票丢失，你的状态也就丢失了。
+
+  钥匙是服务器给你的，所以这就很安全了，不太容易伪造出来。
+  这个时候我们就可以包一些敏感的数据保存到服务端。
+  客户端只需要拿着这把钥匙就可以了。
+ -->

@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "age": 18,
+      "job": 2
+    },
+    {
+      "id": 2,
+      "username": "admin2",
+      "age": 18,
+      "job": 4
+    },
+    {
+      "id": 3,
+      "username": "admin3",
+      "age": 18,
+      "job": 2
+    },
+    {
+      "id": 4,
+      "username": "admin3",
+      "age": 18,
+      "job": 3
+    }
+  ],
+  "jobs": [
+    {
+      "id": 1,
+      "name": "学生sheng"
+    },
+    {
+      "id": 2,
+      "name": "老师"
+    },
+    {
+      "id": 3,
+      "name": "司机"
+    },
+    {
+      "id": 4,
+      "name": "画家"
+    },
+    {
+      "id": 5,
+      "name": "演员"
+    },
+    {
+      "id": 6,
+      "name": "电竞人"
+    }
+  ]
+}

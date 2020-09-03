@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/public/css/login.css">
+</head>
+
+<body>
+  <div class="main">
+    <div class="header">
+      <a href="/">
+        <img src="/public/img/logo3.png" alt="">
+      </a>
+      <h1>用户登录</h1>
+    </div>
+    <form id="login_form">
+      <div class="form-group">
+        <label for="">邮箱</label>
+        <input type="email" class="form-control" id="" name="email" placeholder="Email" autofocus>
+      </div>
+      <div class="form-group">
+        <label for="">密码</label>
+        <a class="pull-right" href="">忘记密码？</a>
+        <input type="password" class="form-control" id="" name="password" placeholder="Password">
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox">记住我
+        </label>
+      </div>
+      <button type="submit" class="btn btn-success btn-block">登录</button>
+    </form>
+    <div class="message">
+      <p>没有账号? <a href="/register">点击创建</a>.</p>
+    </div>
+  </div>
+  <script src="/node_modules/jquery/dist/jquery.js"></script>
+  <script>
+    $('#login_form').on('submit', function (e) {
+      e.preventDefault()
+      var formData = $(this).serialize()
+      console.log(formData)
+      $.ajax({
+        url: '/login',
+        type: 'post',
+        data: formData,
+        dataType: 'json',
+        success: function (data) {
+          var err_code = data.err_code
+          if (err_code === 0) {
+            // window.alert('注册成功！')
+            // 服务端重定向针对异步请求无效
+            window.location.href = '/'
+          } else if (err_code === 1) {
+            window.alert('邮箱或者密码错误')
+          } else if (err_code === 500) {
+            window.alert('服务器忙，请稍后重试！')
+          }
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>
